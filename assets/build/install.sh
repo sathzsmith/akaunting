@@ -1,10 +1,9 @@
 #!/bin/bash
 set -e
 
-if [[ ! -f ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable.zip ]]; then
+if [[ ! -d ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable ]]; then
   echo "Downloading Akaunting ${AKAUNTING_VERSION}..."
   wget "https://github.com/akaunting/akaunting/releases/download/${AKAUNTING_VERSION}/Akaunting_${AKAUNTING_VERSION}-Stable.zip" -O ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable.zip
-
   echo "Extracting Akaunting ${AKAUNTING_VERSION}..."
   mkdir -p ${AKAUNTING_INSTALL_DIR}
   cd ${AKAUNTING_INSTALL_DIR}
@@ -12,6 +11,12 @@ if [[ ! -f ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable.zip ]]; 
   rm -rf ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable.zip
 fi
 
+echo "Extracting Akaunting ${AKAUNTING_VERSION}..."
+mkdir -p ${AKAUNTING_INSTALL_DIR}
+cd ${AKAUNTING_INSTALL_DIR}
+shopt -s dotglob nullglob #to move even hidden files.
+mv ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable/* ./
+rm -rf ${AKAUNTING_BUILD_DIR}/Akaunting_${AKAUNTING_VERSION}-Stable
 
 
 mkdir -p /run/php/
