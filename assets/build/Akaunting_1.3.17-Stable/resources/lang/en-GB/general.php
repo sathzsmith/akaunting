@@ -32,6 +32,7 @@ return [
     'payment_methods'       => 'Payment Method|Payment Methods',
     'compares'              => 'Income vs Expense|Incomes vs Expenses',
     'notes'                 => 'Note|Notes',
+    'notes_with_vnumber'    => 'Notes (e.g. Vehicle Number)', 
     'totals'                => 'Total|Totals',
     'languages'             => 'Language|Languages',
     'updates'               => 'Update|Updates',

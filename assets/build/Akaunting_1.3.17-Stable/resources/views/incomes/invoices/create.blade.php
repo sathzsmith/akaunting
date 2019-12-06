@@ -112,7 +112,7 @@
             </div>
         </div>
 
-        {{ Form::textareaGroup('notes', trans_choice('general.notes', 2)) }}
+        {{ Form::textareaGroup('notes', trans_choice('general.notes_with_vnumber', 1)) }}
 
         @stack('category_id_input_start')
         <div class="form-group col-md-6 required {{ $errors->has('category_id') ? 'has-error' : ''}}">
@@ -344,6 +344,10 @@
             input_id = $(this).attr('id').split('-');
 
             item_id = parseInt(input_id[input_id.length-1]);
+
+            $.ajax({
+                url: "{{ url('common/items/') }}"
+            })
 
             $(this).typeahead({
                 minLength: 3,
