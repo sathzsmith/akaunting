@@ -283,6 +283,35 @@ div.required .control-label:not(span):after, td.required:after {
     line-height: 17px;
 }
 
+/* Customization for Das Recycling 
+* change for das-recycling.
+*/
+
+.typeahead.dropdown-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+    min-width: 760px !important;
+    background: #6da252;
+  }
+  
+  .typeahead.dropdown-menu li {
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    background: #ffff;
+  }
+  
+  .typeahead.dropdown-menu li:hover,
+  .typeahead.dropdown-menu li.active {
+    background-color: #337ab7;
+    color: #ffff;
+  }
+  
+  /* Customization End */
+
 .navbar-nav > .add-new-menu > .dropdown-menu {
     width: 465px;
     max-height: 180px;

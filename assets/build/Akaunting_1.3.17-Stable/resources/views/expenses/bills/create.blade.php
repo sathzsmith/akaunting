@@ -291,6 +291,57 @@
             @if(old('item'))
                 totalItem();
             @endif
+
+            /**
+             * customization added to show list of items on focus of input field. 
+             * change for das-recycling.
+             */
+            input_id = $('.form-control.typeahead').attr('id').split('-');
+
+            item_id = parseInt(input_id[input_id.length-1]);
+            
+
+            $('.form-control.typeahead').typeahead({
+                minLength: 0,
+                items: "all",   
+                autoSelect: false,
+                showHintOnFocus: "all",
+                displayText:function (data) {
+                    return data.name + ' (' + data.sku + ')';
+                },
+                source: function (query, process) {
+                    $.ajax({
+                        url: autocomplete_path,
+                        type: 'GET',
+                        dataType: 'JSON',
+                        data: 'query=' + query + '&type=invoice&currency_code=' + $('#currency_code').val(),
+                        success: function(data) {
+                            console.log('data received');
+                            return process(data);
+                        }
+                    });
+                },
+                afterSelect: function (data) {
+                    $('#item-id-' + item_id).val(data.item_id);
+                    $('#item-quantity-' + item_id).val('1');
+                    $('#item-price-' + item_id).val(data.sale_price);
+                    $('#item-tax-' + item_id).val(data.tax_id);
+
+                    // This event Select2 Stylesheet
+                    $('#item-price-' + item_id).trigger('focusout');
+                    
+                    $('#item-tax-' + item_id).trigger('change');
+
+                    $('#item-total-' + item_id).html(data.total);
+ 
+                    totalItem();
+                    $('#item-quantity-' + item_id).get(0).focus();
+                }
+            });
+ 
+            /**
+             * customization end
+            */
         });
 
         $(document).on('click', '#button-add-item', function (e) {
@@ -340,7 +391,9 @@
             });
         });
 
-        $(document).on('click', '.form-control.typeahead', function() {
+        // change for das-recycling. 
+        // commenting out, since this needs to be done on document load instead of click. 
+        /* $(document).on('click', '.form-control.typeahead', function() {
             input_id = $(this).attr('id').split('-');
 
             item_id = parseInt(input_id[input_id.length-1]);
@@ -376,7 +429,7 @@
                     totalItem();
                 }
             });
-        });
+        }); */
 
         $(document).on('click', '#tax-add-new', function(e) {
             tax_name = $('.select2-search__field').val();
