@@ -344,7 +344,11 @@
         /**
         * customization added to show list of items on focus of input field. 
         */
+        var itemSelected = 0;
+        
         $(document).on('click', '.form-control.typeahead', function() {
+            // resetting itemSelected flag.
+            itemSelected = 0;
             input_id = $(this).attr('id').split('-');
 
             item_id = parseInt(input_id[input_id.length-1]);
@@ -367,12 +371,18 @@
                         type: 'GET',
                         dataType: 'JSON',
                         data: 'query=' + query + '&type=invoice&currency_code=' + $('#currency_code').val(),
-                        success: function(data) {
+                        success: function(data) { 
+                            if (itemSelected ) {
+                                // if item was selected, do not show the same dropdown again.
+                                return;
+                            }
                             return process(data);
                         }
                     });
                 },
                 afterSelect: function (data) {
+                    // itemSelected to mark selected and to avoid showing the dropdown again after selecting.
+                    itemSelected = 1; 
                     $('#item-id-' + item_id).val(data.item_id);
                     $('#item-quantity-' + item_id).val('1');
                     $('#item-price-' + item_id).val(data.sale_price);
