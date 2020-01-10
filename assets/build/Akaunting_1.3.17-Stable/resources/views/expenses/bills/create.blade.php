@@ -83,7 +83,7 @@
                         </tr>
                         @stack('sub_total_td_end')
                         @stack('add_discount_td_start')
-                        <tr id="tr-discount">
+                        <tr id="tr-discount" style="display: none;">
                             <td class="text-right" style="vertical-align: middle;" colspan="5">
                                 <a href="javascript:void(0)" id="discount-text" rel="popover">{{ trans('bills.add_discount') }}</a>
                             </td>
