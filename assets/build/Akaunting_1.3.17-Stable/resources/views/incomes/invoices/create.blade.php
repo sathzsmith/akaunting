@@ -119,7 +119,7 @@
             {!! Form::label('category_id', trans_choice('general.categories', 1), ['class' => 'control-label']) !!}
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-folder-open-o"></i></div>
-                {!! Form::select('category_id', $categories, null, array_merge(['class' => 'form-control', 'placeholder' => trans('general.form.select.field', ['field' => trans_choice('general.categories', 1)])])) !!}
+                {!! Form::select('category_id', $categories) !!}
                 <div class="input-group-btn">
                     <button type="button" id="button-category" class="btn btn-default btn-icon"><i class="fa fa-plus"></i></button>
                 </div>

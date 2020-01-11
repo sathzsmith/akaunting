@@ -48,7 +48,7 @@ class Settings extends Seeder
             'general.schedule_item_stocks'      => '3,5,7',
             'general.schedule_time'             => '09:00',
             'general.admin_theme'               => 'skin-green-light',
-            'general.list_limit'                => '25',
+            'general.list_limit'                => '10',
             'general.use_gravatar'              => '0',
             'general.session_handler'           => 'file',
             'general.session_lifetime'          => '30',

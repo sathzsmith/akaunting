@@ -110,7 +110,7 @@ class Invoices extends Controller
 
         $taxes = Tax::enabled()->orderBy('name')->get()->pluck('title', 'id');
 
-        $categories = Category::enabled()->type('income')->orderBy('name')->pluck('name', 'id');
+        $categories = Category::enabled()->type('income')->orderBy('name', 'desc')->pluck('name', 'id');
 
         $number = $this->getNextInvoiceNumber();
 
