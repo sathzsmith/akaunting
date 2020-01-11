@@ -103,7 +103,7 @@ class Bills extends Controller
 
         $taxes = Tax::enabled()->orderBy('name')->get()->pluck('title', 'id');
 
-        $categories = Category::enabled()->type('expense')->orderBy('name')->pluck('name', 'id');
+        $categories = Category::enabled()->type('expense')->orderBy('name', 'desc')->pluck('name', 'id');
 
         return view('expenses.bills.create', compact('vendors', 'currencies', 'currency', 'items', 'taxes', 'categories'));
     }
