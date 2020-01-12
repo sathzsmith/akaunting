@@ -83,7 +83,7 @@
                         </tr>
                         @stack('sub_total_td_end')
                         @stack('add_discount_td_start')
-                        <tr id="tr-discount">
+                        <tr id="tr-discount" style="display: none;">
                             <td class="text-right" style="vertical-align: middle;" colspan="5">
                                 <a href="javascript:void(0)" id="discount-text" rel="popover">{{ trans('bills.add_discount') }}</a>
                             </td>
@@ -119,7 +119,7 @@
             {!! Form::label('category_id', trans_choice('general.categories', 1), ['class' => 'control-label']) !!}
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-folder-open-o"></i></div>
-                {!! Form::select('category_id', $categories, null, array_merge(['class' => 'form-control', 'placeholder' => trans('general.form.select.field', ['field' => trans_choice('general.categories', 1)])])) !!}
+                {!! Form::select('category_id', $categories) !!}
                 <div class="input-group-btn">
                     <button type="button" id="button-category" class="btn btn-default btn-icon"><i class="fa fa-plus"></i></button>
                 </div>
@@ -131,6 +131,8 @@
         {{ Form::recurring('create') }}
 
         {{ Form::fileGroup('attachment', trans('general.attachment')) }}
+
+        {{ Form::textGroup('cheque_number', trans('bills.cheque_number'), 'file-text-o', []) }}
 
         {{ Form::hidden('vendor_name', old('vendor_name'), ['id' => 'vendor_name']) }}
         {{ Form::hidden('vendor_email', old('vendor_email'), ['id' => 'vendor_email']) }}
