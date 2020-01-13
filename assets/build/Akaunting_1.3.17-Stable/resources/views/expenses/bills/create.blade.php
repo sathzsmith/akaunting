@@ -22,6 +22,12 @@
         </div>
         @stack('vendor_id_input_end')
 
+        {{ Form::textGroup('phone', trans('bills.phone'), 'phone', []) }}
+
+        {{ Form::textGroup('IC', trans('general.ic'), 'envelope', []) }}
+
+        {{ Form::textGroup('CustomerID', trans('general.customer_id'), 'envelope', []) }}
+
         {{ Form::selectGroup('currency_code', trans_choice('general.currencies', 1), 'exchange', $currencies, setting('general.default_currency')) }}
 
         {{ Form::textGroup('billed_at', trans('bills.bill_date'), 'calendar',['id' => 'billed_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy/mm/dd\'', 'data-mask' => '', 'autocomplete' => 'off'],Date::now()->toDateString()) }}
@@ -147,6 +153,9 @@
 
     <div class="box-footer">
         {{ Form::saveButtons('expenses/bills') }}
+        <a href="" class="btn btn-success">
+            <span class="fa fa-print"></span> &nbsp;{{ trans('general.print') }}
+        </a>
     </div>
     <!-- /.box-footer -->
 

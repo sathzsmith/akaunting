@@ -13,6 +13,12 @@
 
                     {{ Form::textGroup('email', trans('general.email'), 'envelope', []) }}
 
+                    {{ Form::textGroup('phone', trans('general.phone'), 'phone', []) }}
+
+                    {{ Form::textGroup('IC', trans('general.ic'), 'envelope', []) }}
+
+                    {{ Form::textGroup('CustomerID', trans('general.customer_id'), 'envelope', []) }}
+
                     {{ Form::textGroup('tax_number', trans('general.tax_number'), 'percent', []) }}
 
                     {{ Form::selectGroup('currency_code', trans_choice('general.currencies', 1), 'exchange', $currencies, setting('general.default_currency')) }}
