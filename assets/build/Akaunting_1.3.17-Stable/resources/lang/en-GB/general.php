@@ -68,6 +68,8 @@ return [
     'delete_confirm'        => 'Confirm delete :name :type?',
     'name'                  => 'Name',
     'email'                 => 'Email',
+    'ic'                    => 'IC',
+    'customer_id'           => 'Customer ID',
     'tax_number'            => 'Tax Number',
     'phone'                 => 'Phone',
     'address'               => 'Address',
