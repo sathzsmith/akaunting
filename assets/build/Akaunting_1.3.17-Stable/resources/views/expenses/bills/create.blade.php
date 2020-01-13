@@ -153,9 +153,6 @@
 
     <div class="box-footer">
         {{ Form::saveButtons('expenses/bills') }}
-        <a href="" class="btn btn-success">
-            <span class="fa fa-print"></span> &nbsp;{{ trans('general.print') }}
-        </a>
     </div>
     <!-- /.box-footer -->
 
