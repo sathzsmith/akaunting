@@ -37,10 +37,6 @@ WORKDIR ${AKAUNTING_INSTALL_DIR}
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
-COPY migration.sh ${AKAUNTING_BUILD_DIR}/
-
-RUN chmod 755 ${AKAUNTING_BUILD_DIR}/migration.sh
-
 CMD ["app:akaunting"]
 
 EXPOSE 80/tcp 9000/tcp
