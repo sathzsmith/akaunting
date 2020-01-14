@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterCustomersTable extends Migration
+class AlterBillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AlterCustomersTable extends Migration
      */
     public function up()
     {
-        Schema::table('customers', function (Blueprint $table) {
+        Schema::table('bills', function (Blueprint $table) {
             $table->string('ic')->nullable();
             $table->string('customer_id')->nullable();
+            $table->string('cheque_number')->nullable();
         });
     }
 
@@ -26,7 +27,7 @@ class AlterCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::table('customers', function (Blueprint $table) {
+        Schema::table('bills', function (Blueprint $table) {
             //
         });
     }
