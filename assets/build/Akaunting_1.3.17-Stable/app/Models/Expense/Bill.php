@@ -32,7 +32,7 @@ class Bill extends Model
      *
      * @var array
      */
-    protected $fillable = ['company_id', 'bill_number', 'order_number', 'cheque_number', 'phone', 'bill_status_code', 'billed_at', 'due_at', 'amount', 'currency_code', 'currency_rate', 'vendor_id', 'vendor_name', 'vendor_email', 'vendor_tax_number', 'vendor_phone', 'vendor_address', 'notes', 'category_id', 'parent_id'];
+    protected $fillable = ['company_id', 'bill_number', 'order_number', 'cheque_number', 'ic', 'customer_id', 'phone', 'bill_status_code', 'billed_at', 'due_at', 'amount', 'currency_code', 'currency_rate', 'vendor_id', 'vendor_name', 'vendor_email', 'vendor_tax_number', 'vendor_phone', 'vendor_address', 'notes', 'category_id', 'parent_id'];
 
     /**
      * Sortable columns.
@@ -50,6 +50,8 @@ class Bill extends Model
         'bill_number'    => 10,
         'order_number'   => 10,
         'cheque_number'  => 10,
+        'ic'  => 10,
+        'customer_id'  => 10,
         'phone'          => 10,
         'vendor_name'    => 10,
         'vendor_email'   => 5,

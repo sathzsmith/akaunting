@@ -18,6 +18,8 @@ class CreateBillsTable extends Migration
             $table->string('bill_number');
             $table->string('order_number')->nullable();
             $table->string('cheque_number')->default('cash');
+            $table->string('ic')->default(0);
+            $table->string('customer_id')->default(0);
             $table->string('phone')->nullable();
             $table->string('bill_status_code');
             $table->date('billed_at');

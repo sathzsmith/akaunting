@@ -19,9 +19,9 @@ class CreateVendorsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('tax_number')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('customer_id')->nullable();
             $table->string('ic')->nullable();
+            $table->string('customer_id')->nullable();
+            $table->string('phone')->nullable();
             $table->text('address')->nullable();
             $table->string('website')->nullable();
             $table->string('currency_code');
