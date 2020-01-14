@@ -8,6 +8,8 @@ return [
     'due_date'              => 'Due Date',
     'order_number'          => 'Order Number',
     'cheque_number'         => 'Cheque Number',
+    'ic'                    => 'IC',
+    'customer_id'           => 'customer_id',
     'bill_from'             => 'Bill From',
 
     'quantity'              => 'Quantity',
