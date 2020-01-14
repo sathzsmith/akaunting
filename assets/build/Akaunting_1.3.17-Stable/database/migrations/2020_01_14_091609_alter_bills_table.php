@@ -14,7 +14,6 @@ class AlterBillsTable extends Migration
     public function up()
     {
         Schema::table('bills', function (Blueprint $table) {
-
             $table->string('ic')->nullable();
             $table->string('customer_id')->nullable();
         });

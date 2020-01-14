@@ -14,9 +14,8 @@ class AlterCustomersTable extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->string('ic')->default(0);
-            $table->string('customer_id')->default(0);
-            //
+            $table->string('ic')->nullable();
+            $table->string('customer_id')->nullable();
         });
     }
 
