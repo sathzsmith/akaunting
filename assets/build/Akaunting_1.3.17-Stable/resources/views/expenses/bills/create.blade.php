@@ -24,9 +24,9 @@
 
         {{ Form::textGroup('phone', trans('bills.phone'), 'phone', []) }}
 
-        {{ Form::textGroup('ic', trans('bills.ic'), 'file-text-o', []) }}
+        <!-- {{ Form::textGroup('ic', trans('bills.ic'), 'file-text-o', []) }}
 
-        {{ Form::textGroup('customer_id', trans('bills.customer_id'), 'file-text-o', []) }}
+        {{ Form::textGroup('customer_id', trans('bills.customer_id'), 'file-text-o', []) }} -->
 
         {{ Form::selectGroup('currency_code', trans_choice('general.currencies', 1), 'exchange', $currencies, setting('general.default_currency')) }}
 
@@ -138,7 +138,7 @@
 
         {{ Form::fileGroup('attachment', trans('general.attachment')) }}
 
-        {{ Form::textGroup('cheque_number', trans('bills.cheque_number'), 'file-text-o', []) }}
+        <!-- {{ Form::textGroup('cheque_number', trans('bills.cheque_number'), 'file-text-o', []) }} -->
 
         {{ Form::hidden('vendor_name', old('vendor_name'), ['id' => 'vendor_name']) }}
         {{ Form::hidden('vendor_email', old('vendor_email'), ['id' => 'vendor_email']) }}
