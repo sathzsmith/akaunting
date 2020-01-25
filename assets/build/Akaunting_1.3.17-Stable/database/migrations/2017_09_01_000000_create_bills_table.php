@@ -17,7 +17,6 @@ class CreateBillsTable extends Migration
             $table->integer('company_id');
             $table->string('bill_number');
             $table->string('order_number')->nullable();
-            $table->string('phone')->nullable();
             $table->string('bill_status_code');
             $table->date('billed_at');
             $table->date('due_at');

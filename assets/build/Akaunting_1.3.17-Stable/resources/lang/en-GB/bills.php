@@ -9,7 +9,7 @@ return [
     'order_number'          => 'Order Number',
     'cheque_number'         => 'Cheque Number',
     'ic'                    => 'IC',
-    'customer_id'           => 'CustomerID',
+    'customer_id'           => 'customer_id',
     'phone'                 => 'Phone',
     'bill_from'             => 'Bill From',
 
